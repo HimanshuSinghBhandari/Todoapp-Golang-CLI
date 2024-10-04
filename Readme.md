@@ -12,7 +12,25 @@ A simple and efficient command-line interface (CLI) for managing your tasks. Bui
 
 ## Project Structure
 
-todo-cli/ │ ├── cmd/ │ ├── add.go # Add task command │ ├── delete.go # Delete task command │ ├── list.go # List tasks command │ ├── save.go # Save tasks command │ ├── table.go # Display tasks in table command │ ├── internal/ │ └── todo/ │ ├── todo.go # Task operations (add, delete, display) │ └── storage.go # Read/write logic for saving/loading tasks │ ├── go.mod # Go module file ├── main.go # Main application entry point └── README.md # Documentation
+```bash
+todo-cli/
+│
+├── cmd/
+│   ├── add.go        # Add task command
+│   ├── delete.go     # Delete task command
+│   ├── list.go       # List tasks command
+│   ├── save.go       # Save tasks command
+│   ├── table.go      # Display tasks in table command
+│
+├── internal/
+│   └── todo/
+│       ├── todo.go   # Task operations (add, delete, display)
+│       └── storage.go # Read/write logic for saving/loading tasks
+│
+├── go.mod            # Go module file
+├── main.go           # Main application entry point
+└── README.md         # Documentation
+
 
 
 ## Installation

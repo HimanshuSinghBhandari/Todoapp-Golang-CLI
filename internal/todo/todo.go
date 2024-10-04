@@ -21,21 +21,23 @@ func AddTask(description string){
 	}
 	tasks = append(tasks, task)
 	taskIDCounter++
+
+	SaveTaskToFiles() // save task after adding
 }
 
 func DeleteTask(id int){
 	for i, task := range tasks {
 		if task.ID == id {
 			tasks = append(tasks[:i], tasks[i+1:]...) // slice up means select all element till i (but not include it ) and then select all element from i+1 till end , and ... is variadic which allows yout o pass the element as individual argument
+			SaveTaskToFiles()
 			return
-		} else {
-			fmt.Println("Task not found");
-		}
+		}  
 	}
-	 
+    fmt.Println("Task not found"); 
 }
 
 func ListTasks() {
+	LoadTasksFromFile()
 	if len(tasks) == 0 {
 		fmt.Println("No task found");
 		return
@@ -51,6 +53,8 @@ func ListTasks() {
 }
 
 func DisplayTaskTable() {
+
+	LoadTasksFromFile()
 	if len(tasks) == 0 {
 		fmt.Println("No task dispaly");
 		return
